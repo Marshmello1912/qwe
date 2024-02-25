@@ -4,17 +4,19 @@
 
 int main()
 {
-    FILE* inputFile;
-    if (fopen_s(&inputFile, "data.txt", "r") != 0) {
-        return 0;
-    }
     int line_count = 0;
+    std::cin >> line_count;
 
-    char* bufer = new char[100];
-
-    while (fgets(bufer, 100, inputFile)) line_count++;
-
-    fseek(inputFile, 0, SEEK_SET);
+    float* X_points = new float[line_count];
+    float* Y_points = new float[line_count];
+    std::cout << "enter x's: " << std::endl;
+    for (int i = 0; i < line_count; i++) {
+        std::cin >> X_points[i];
+    }
+    std::cout << "enter y's: " << std::endl;
+    for (int i = 0; i < line_count; i++) {
+        std::cin >> Y_points[i];
+    }
 
     float* X_points = new float[line_count];
     float* Y_points = new float[line_count];
