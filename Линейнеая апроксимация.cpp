@@ -37,7 +37,7 @@ int main()
         for (int i = 0; i < line_count; i++) {
             Y_points[i] = X_points[i] * a0;
         }
-        std::cout << "b22 " << b22 << " c2 " << c2 << std::endl;
+        std::cout << "b22:" << b22 << " c2:" << c2 << std::endl;
     }
     else {
         float b11 = line_count;
@@ -58,11 +58,11 @@ int main()
         for (int i = 0; i < line_count; i++) {
             Y_points[i] = a0 + X_points[i] * a1;
         }
-        std::cout << "b11 " << b11 << " b12 " << b12 << " c1 " << c1 << "\nb21 " << b21 << " b22 " << b22 << " c2 " << c2 << std::endl;
+        std::cout << "b11:" << b11 << " b12:" << b12 << " c1:" << c1 << "\nb21:" << b21 << " b22:" << b22 << " c2 " << c2 << std::endl;
 
     }
     for (int i = 0; i < line_count; i++) {
-        std::cout << "x\t" << X_points[i] << ' y\t' << Y_points[i] << std::endl;
+        std::cout << "x: " << X_points[i]; std::cout << "\ty:" << Y_points[i] << std::endl;
     }
 }
 
