@@ -4,23 +4,21 @@
 
 int main()
 {
-    FILE* inputFile;
-    if (fopen_s(&inputFile, "data.txt", "r") != 0) {
-        return 0;
-    }
+  
     int line_count = 0;
-
-    char* bufer = new char[100];
-
-    while (fgets(bufer, 100, inputFile)) line_count++;
-
-    fseek(inputFile, 0, SEEK_SET);
+    std::cin >> line_count;
 
     float* X_points = new float[line_count];
     float* Y_points = new float[line_count];
-
-    for (int i = 0; fscanf_s(inputFile, "%f %f", &X_points[i], &Y_points[i]) != EOF; i++);
-    fclose(inputFile);
+    std::cout << "enter x's: " << std::endl;
+    for (int i = 0; i < line_count; i++) {
+        std::cin >> X_points[i];
+    }
+    std::cout << "enter y's: " << std::endl;
+    for (int i = 0; i < line_count; i++) {
+        std::cin >> Y_points[i];
+    }
+    
     std::cout << "1. a0 * x\n";
     std::cout << "2. a0 + a1 * x\n";
     int var;
@@ -62,7 +60,7 @@ int main()
 
     }
     for (int i = 0; i < line_count; i++) {
-        std::cout << "x: " << X_points[i]; std::cout << "\ty:" << Y_points[i] << std::endl;
+        std::cout << "x: " << X_points[i]; std::cout << "\ty: " << Y_points[i] << std::endl;
     }
 }
 
